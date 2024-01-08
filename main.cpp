@@ -26,7 +26,12 @@ int main(int argc, char* argv[]) {
     // print board
     for(int i = 0; i < boardSize; i++) {
         for(int j = 0; j < boardSize; j++){
-          cout << board[i*boardSize+j] << " ";
+            if (board[i*boardSize+j] == 0)
+                cout << "\033[31m" << board[i*boardSize+j] << "\033[0m "
+                     << " ";
+            else
+                cout << "\033[30m" << board[i*boardSize+j] << "\033[0m "
+                     << " ";
         }
           cout << endl;
     }
